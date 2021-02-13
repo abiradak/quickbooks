@@ -1,0 +1,15 @@
+.ptb-90 {
+    padding: 90px 0;
+}
+
+.top-logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.login h3{ text-align: center;}
+
+.error {
+    color: darkmagenta;
+}

@@ -1,0 +1,81 @@
+<!-- Loader -->
+<!-- <div class="loder" *ngIf="showLoader">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom" style="color:#fff;"></i>
+</div> -->
+<section class="cover-user bg-white">
+    <div class="container-fluid px-0">
+        <div class="row no-gutters position-relative">
+            <div class="col-lg-4 cover-my-30 order-2">
+                <div class="cover-user-img d-flex align-items-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card login-page border-0" style="z-index: 1">
+                                <div class="top-logo"><img src="../../assets/images/green-town-logo-.png"></div>
+                                <div class="card-body p-0">
+                                    <h4 class="card-title text-center">Login</h4>
+                                    <form class="login-form mt-4"  *ngIf="loginData && loginData.methods && loginData.methods.password" ngNoForm
+                                    [action]="loginData.methods.password.config.action" autocomplete="off"
+                                    method="{{ loginData.methods.password.config.method }}">
+                                        <div class="row">
+                                            <!-- Email -->
+                                            <div class="col-lg-12" *ngFor="let field of loginData.methods.password.config.fields">
+                                                <div class="form-group">
+                                                    <label for="{{ field.name }}" *ngIf="field.name=='identifier'">Email <span class="text-danger">*</span></label>
+                                                    <div class="position-relative" *ngIf="field.name=='identifier'" >
+                                                        <i class="fa fa-envelope-o" style="position:absolute;left:15px; top:10px; z-index: 999;"></i>
+                                                        <input type="email"  class="form-control  pl-5" id="{{ field.name }}" type="{{ field.type }}" placeholder="Email" required="{{ field.required }}" name="{{ field.name }}" />
+                                                    </div>
+                                                    <div *ngIf="field.messages && field.name=='identifier'">
+                                                        <p class="error" *ngFor="let message of field.messages">{{message.text}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Password -->
+                                            <div class="col-lg-12"  *ngFor="let field of loginData.methods.password.config.fields">
+                                                <div class="form-group">
+                                                    <label for="{{ field.name }}" *ngIf="field.name=='password'">Password <span class="text-danger">*</span></label>
+                                                    <div class="position-relative" *ngIf="field.name=='password'">
+                                                        <i class="fa fa-key" style="position:absolute;left:15px; top:10px; z-index: 999;"></i>
+                                                        <input class="form-control pl-5" id="{{ field.name }}" type="{{ field.type }}" placeholder="{{ field.name }}" required="{{ field.required }}" name="{{ field.name }}"  />
+                                                    </div>
+                                                    <div *ngIf="field.messages && field.name=='password'" >
+                                                        <p class="error" *ngFor="let message of field.messages">{{message.text}}</p>
+                                                    </div>
+                                                    <input type="{{ field.type }}" required="{{ field.required }}" name="{{ field.name }}" value="{{ field.value }}" *ngIf="field.name == 'csrf_token'"/>
+                                                </div>
+                                            </div>
+                                            <!-- Remember me -->
+                                            <div class="col-lg-12">
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="form-group">
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="remember" value="$event.target.checked">
+                                                            <label class="custom-control-label" for="remember">Remember me</label>
+                                                        </div>
+                                                    </div>
+                                                    <p class="forgot-pass mb-0"><a routerLink="/forgot-password" class="text-dark font-weight-bold">Forgot password ?</a></p>
+                                                </div>
+                                            </div>
+                                            <!-- Sign in button -->
+                                            <div class="col-lg-12 mb-0">
+                                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                                            </div>
+                                            <!-- Sign up link -->
+                                            <div class="col-12 text-center">
+                                                <p class="mb-0 mt-3">
+                                                    <small class="text-dark mr-2">Don't have an account?</small> 
+                                                    <a routerLink="/register" class="text-dark font-weight-bold">Sign Up</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 offset-lg-4 padding-less img order-1" style="background-image:url('../../assets/images/01.jpg')" data-jarallax='{"speed": 0.5}'></div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{
+    "id": "3fdae673-ebee-4bc0-aaf7-111447b8c300",
+    "type": "browser",
+    "expires_at": "2020-12-28T09:19:48.013227Z",
+    "issued_at": "2020-12-28T08:19:48.013227Z",
+    "request_url": "http://127.0.0.1:4433/self-service/recovery/browser",
+    "messages": null,
+    "methods": {
+        "link": {
+            "method": "link",
+            "config": {
+                "action": "http://127.0.0.1:4433/self-service/recovery/methods/link?flow=3fdae673-ebee-4bc0-aaf7-111447b8c300",
+                "method": "POST",
+                "fields": [
+                    {
+                        "name": "csrf_token",
+                        "type": "hidden",
+                        "required": true,
+                        "value": "6gGWqwIzMkYDzMniNiQzWGVgauZxqHpeJ+Z8U3DPrnvIfbzcyff+JeV/1Mk0aDIMPSxj1TAvlXqgrxFbxHTZDg=="
+                    },
+                    {
+                        "name": "email",
+                        "type": "email",
+                        "required": true
+                    }
+                ]
+            }
+        }
+    },
+    "state": "choose_method"
+}

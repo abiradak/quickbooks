@@ -1,0 +1,59 @@
+.thankyou {
+    width: 100%;
+    padding: 15vh 0px;
+}
+
+.symbol {
+    position: relative;
+    font-size: 36px;
+    font-weight: lighter;
+    background: #78bc1c;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    border-radius: 200px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.symbol:after {
+    position: absolute;
+    content: "";
+    height: 120px;
+    width: 120px;
+    border: 1px solid #76cd613d;
+    border-radius: 200px;
+    left: -10px;
+    top: -10px;
+}
+
+.symbol::before {
+    position: absolute;
+    content: "";
+    height: 110px;
+    width: 110px;
+    border: 1px solid #76cd61b3;
+    border-radius: 200px;
+    left: -5px;
+    top: -5px;
+}
+
+.thank-tyou-content h2 {
+    font-size: 20px;
+    margin-top: 38px;
+}
+
+.thank-tyou-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.thank-tyou-content p span {
+    color: #76cd61;
+}
+
+.thankyou .btn-success {
+    background-color: #78bc1c;
+    border-color: #78bc1c;
+}

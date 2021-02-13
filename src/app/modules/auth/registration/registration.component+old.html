@@ -1,0 +1,96 @@
+<div class="container h-100">
+    <div class="login col-4 ml-auto mr-auto p-0">
+        <!-- <img class="col-12" src='./../../../assets/images/pixeem_logo.jpg' /> -->
+        <!-- <img
+        class="col-12 w-75 mx-auto d-block"
+        src="./../../../assets/images/pixeem_logo_bl.png"
+      /> -->
+        <div class="login-container">
+            <h1 class="login-header">
+                {{ pageTitle }}
+            </h1>
+
+            <div class="login-body">
+                <form *ngIf="registrationData && registrationData.methods && registrationData.methods.password" ngNoForm
+                    [action]="registrationData.methods.password.config.action" class="needs-validation"
+                    autocomplete="off" method="{{ registrationData.methods.password.config.method }}">
+                    <fieldset>
+                        <div class="form-group" *ngFor="let field of registrationData.methods.password.config.fields">
+                            <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                    required="{{ field.required }}" name="{{ field.name }}" value="{{field.value}}"
+                                    *ngIf="field.name == 'csrf_token'" />
+                            <div class="col-md-8 row" *ngIf="field.name.toLowerCase() == 'traits.email'">
+                                <label class="col-md-2 col-form-label" for="{{ field.name }}">Email</label>
+                                <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                    placeholder="Email" required="{{ field.required }}" name="{{ field.name }}" />
+                            </div>
+                            <div class="col-md-8 row" *ngIf="field.name.toLowerCase() == 'traits.name.first'">
+                                <label class="col-md-2 col-form-label" for="{{ field.name }}">First name</label>
+                                <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                    placeholder="first name" required="{{ field.required }}" name="{{ field.name }}" />
+                            </div>
+                            <div class="col-md-8 row" *ngIf="field.name.toLowerCase() == 'traits.name.last'">
+                                <label class="col-md-2 col-form-label" for="{{ field.name }}">Last name</label>
+                                <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                    placeholder="last name" required="{{ field.required }}" name="{{ field.name }}" />
+                            </div>
+                            <div class="col-md-8 row" *ngIf="field.name.toLowerCase() == 'password'">
+                                <label class="col-md-2 col-form-label" for="{{ field.name }}">Password</label>
+                                <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                    placeholder="password" required="{{ field.required }}" name="{{ field.name }}" />
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="d-flex justify-content-between">
+                                <span class="d-flex justify-content-end">
+                                    <button class="btn btn-primary" type="submit"
+                                        style="width: 80px; margin-right: 10px">
+                                        Register
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row" *ngIf="registrationData.methods.password.config.messages">
+                            <div *ngFor="let message of registrationData.methods.password.config.messages">
+                                {{message.text}}</div>
+                        </div>
+                    </fieldset>
+                </form>
+                <form *ngIf="registrationData && registrationData.methods && registrationData.methods.oidc" ngNoForm
+                    [action]="registrationData.methods.oidc.config.action" class="needs-validation" autocomplete="off"
+                    method="{{ registrationData.methods.oidc.config.method }}">
+                    <fieldset>
+                        <div class="form-group row">
+                            <div class="form-group">
+                                <label class="col-md-2 col-form-label"> Register with </label>
+                                <div class="d-flex col-md-2"
+                                    *ngFor="let field of registrationData.methods.oidc.config.fields">
+                                    <input type="{{ field.type }}" required="{{ field.required }}"
+                                            name="{{ field.name }}" value="{{ field.value }}" *ngIf="field.name == 'csrf_token'" />
+                                    <span class="d-flex" *ngIf="field.name == 'provider'">
+                                        <input type="{{ field.type }}" required="{{ field.required }}"
+                                            name="{{ field.name }}" value="{{ field.value }}" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="alert alert-danger" *ngIf="errorMessage">
+                    {{ errorMessage }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-group">
+                    <div class="d-flex col-md-2" routerLink="/login">Already registered ? Login</div>
+                    <div class="d-flex col-md-2" routerLink="/recovery">
+                        Forgot Password
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

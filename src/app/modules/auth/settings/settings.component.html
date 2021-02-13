@@ -1,0 +1,101 @@
+<div class="display p-5 border form_container">
+    <div class="form_container">
+        <div class="line" *ngIf="header || detail || subHeader"></div>
+        <form *ngIf="settingsData && settingsData.methods && settingsData.methods.profile" ngNoForm
+            [action]="settingsData.methods.profile.config.action" class="needs-validation" autocomplete="off"
+            method="{{ settingsData.methods.profile.config.method }}">
+            <fieldset>
+                <legend>Profile</legend>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <div class="d-flex col-md-8" *ngFor="let field of settingsData.methods.profile.config.fields">
+                            <div class="d-flex">
+                                <div class="d-flex col-md-8">
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'traits.email'"> Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'traits.name.first'"> First name
+                                    </label>
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'traits.name.last'"> Last name
+                                    </label>
+                                </div>
+                                <div class="d-flex col-md-12 mr-auto p-1">
+                                    <input class="form-control" type="{{ field.type }}" required="{{ field.required }}"
+                                        name="{{ field.name }}" value="{{ field.value }}" />
+                                </div>
+                            </div>
+                            <input type="{{ field.type }}" required="{{ field.required }}" name="{{ field.name }}"
+                                value="{{ field.value }}" *ngIf="field.name == 'csrf_token'" />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit"  class="col-2 form-btn form-btn-new">Update</button>
+                <div class="form-group row" *ngIf="settingsData.methods.profile.config.messages">
+                    <div *ngFor="let message of settingsData.methods.profile.config.messages">
+                        {{ message.text }}
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="line" *ngIf="header || detail || subHeader"></div>
+        <form *ngIf="settingsData && settingsData.methods && settingsData.methods.password" ngNoForm
+            [action]="settingsData.methods.password.config.action" class="needs-validation" autocomplete="off"
+            method="{{ settingsData.methods.password.config.method }}">
+            <fieldset>
+                <legend>Change password</legend>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <div class="d-flex col-md-6" *ngFor="let field of settingsData.methods.password.config.fields">
+                            <div class="d-flex">
+                                <div class="d-flex col-md-4">
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'password'"> Password </label>
+                                </div>
+                                <div class="d-flex col-md-12">
+                                    <input class="form-control" id="{{ field.name }}" type="{{ field.type }}"
+                                        placeholder="{{ field.name }}" required="{{ field.required }}"
+                                        name="{{ field.name }}" *ngIf="field.name != 'csrf_token'" />
+                                </div>
+                            </div>
+                            <input type="{{ field.type }}" required="{{ field.required }}" name="{{ field.name }}"
+                                value="{{ field.value }}" *ngIf="field.name == 'csrf_token'" />
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="col-2 form-btn form-btn-new">Save</button>
+                <div class="form-group row" *ngIf="settingsData.methods.password.config.messages">
+                    <div *ngFor="let message of settingsData.methods.password.config.messages">
+                        {{ message.text }}
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <div class="line" *ngIf="header || detail || subHeader"></div>
+        <form *ngIf="settingsData && settingsData.methods && settingsData.methods.oidc" ngNoForm
+            [action]="settingsData.methods.oidc.config.action" class="needs-validation" autocomplete="off"
+            method="{{ settingsData.methods.oidc.config.method }}">
+            <fieldset>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <div class="d-flex col-md-6" *ngFor="let field of settingsData.methods.oidc.config.fields">
+                            <div class="d-flex">
+                                <div class="d-flex col-md-4">
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'link'"> Link &nbsp;&nbsp;&nbsp;&nbsp; </label>
+                                    <label for="{{ field.name }}" *ngIf="field.name == 'unlink'"> Unlink </label>
+                                </div>
+                                <div class="d-flex col-md-12">
+                                    <input class="form-control" type="{{ field.type }}" required="{{ field.required }}"
+                                    name="{{ field.name }}" value="{{ field.value }}" class="col-8 form-btn-new" />
+                                </div>
+                            </div>
+                            <input type="{{ field.type }}" required="{{ field.required }}" name="{{ field.name }}"
+                                value="{{ field.value }}" *ngIf="field.name == 'csrf_token'" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row" *ngIf="settingsData.methods.oidc.config.messages">
+                    <div *ngFor="let message of settingsData.methods.oidc.config.messages">
+                        {{ message.text }}
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

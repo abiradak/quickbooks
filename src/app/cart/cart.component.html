@@ -1,0 +1,180 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a routerLink="/product-list">Home</a></li>
+            <li class="breadcrumb-item active">Cart</li>
+        </ol>
+    </div>
+</div>
+<div class="cart-main-area  ptb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <!-- Form Start -->
+                <form action="#">
+                    <!-- Table Content Start -->
+                    <div class="table-content  table-responsive">
+                        <table>
+                            <tr>
+                                <td style="text-align: left;">
+                                    <h2 style="margin-bottom: 5px;">William Smith</h2>
+                                    <h5> <span>17600 Yonge St,</span><br>
+                                        <span>Newmarket,</span>
+                                        <span>ON L3Y 4Z1,</span>
+                                        <span>Ontario,</span><br>
+                                        <span>89-217-0128</span></h5>
+                                </td>
+                                <td>
+                                    <div class="table-right">
+                                        <h2><b>Purchase Order</b></h2>
+                                        <div class="order-details">
+                                            <table>
+                                                <tr style="background: #eaeaea;">
+                                                    <td><b>PO #</b></td>
+                                                    <td><b>Date</b></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3026</td>
+                                                    <td>{{ date | date:'dd/MM/yyyy' }}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="table-content table-responsive mb-45">
+                        <table>
+                            <thead>
+                                <tr style="background: #eaeaea;">
+                                    <th class="product-thumbnail">Image</th>
+                                    <th class="product-name">Product</th>
+                                    <!-- <th class="product-name">Size</th>
+                                    <th class="product-name">Color</th> -->
+                                    <th class="product-price">Price</th>
+                                    <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngIf="order !== null">
+                                <tr *ngFor="let item of order.items; let i = index;">
+                                    <td class="product-thumbnail" *ngIf="item.product">
+                                        <a><img [src]="item.product.image" alt="cart-image"></a>
+                                    </td>
+                                    <td class="product-name" *ngIf="item.product">
+                                        <a>{{ item.product.name }}- 
+                                            <div *ngIf="item.product.characteristics.length > 0">
+                                                <span *ngFor="let chartec of item.product.characteristics; let v = index;">{{ item.product.characteristics[v].name }}: {{ item.product.characteristics[v].value }}</span>
+                                            </div>
+                                        </a>
+                                    </td>
+                                    <!-- <td class="product-name" *ngIf="item.product.characteristics[0]"><a>{{ item.product.characteristics[0].value }}</a></td>
+                                    <td class="product-name" *ngIf="!item.product.characteristics[0]"><a>NaN</a></td>
+                                    <td class="product-name" *ngIf="item.product.characteristics[1]"><a>{{ item.product.characteristics[1].value }}</a></td>
+                                    <td class="product-name" *ngIf="!item.product.characteristics[1]"><a>NaN</a></td> -->
+                                    <td class="product-price" *ngIf="item.product" ><span class="amount">${{ item.product.price }}</span></td>
+                                    <td class="product-quantity" *ngIf="item.product">
+                                        <div class="add-prdct">
+                                            <!-- <p>-</p> <span>{{ item.quantity }}</span> <p>+</p> -->
+                                            <p (click) = "updateCart(i, 'remove');">-</p>
+                                                <span>{{ item.quantity }}</span>
+                                            <p (click) = "updateCart(i, 'add');">+</p>
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal">{{ item.product.price*item.quantity | currency: 'CAD'  }}</td>
+                                    <td class="product-remove"(click) = "deleteFromCart(i, item)">
+                                        <a><i class="fa fa-times" aria-hidden="true"></i></a>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td class="product-thumbnail">
+                                        <a><img src="../../assets/images/product-list-2.png" alt="cart-image"></a>
+                                    </td>
+                                    <td class="product-name"><a>10HK</a></td>
+                                    <td class="product-name"><a>XL</a></td>
+                                    <td class="product-name"><a>White</a></td>
+                                    <td class="product-price"><span class="amount">$ 50.00</span></td>
+                                    <td class="product-quantity">
+                                        <div class="add-prdct">
+                                            - <span>1</span> +
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal">$ 50.00</td>
+                                    <td class="product-remove"> <a><i class="fa fa-times"
+                                                aria-hidden="true"></i></a></td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Table Content Start -->
+                    <div class="row">
+                        <!-- Cart Button Start -->
+                        <div class="col-md-8 col-sm-12">
+                            <div class="buttons-cart">
+                                <!-- <input type="submit" value="Update PO"> -->
+                                <a routerLink="/product-list">Continue</a>
+                            </div>
+                        </div>
+                        <!-- Cart Button Start -->
+                        <!-- Cart Totals Start -->
+                        <div *ngIf="order !== null" class="col-md-4 col-sm-12">
+                            <div class="cart_totals float-md-right text-md-right">
+                                <h2> Total Estimate</h2>
+                                <br>
+                                <table class="float-md-right">
+                                    <tbody>
+                                        <tr class="cart-subtotal">
+                                            <th>Subtotal</th>
+                                            <td><span class="amount">{{ subTotal | currency: 'CAD' }}</span></td>
+                                        </tr>
+                                        <tr class="cart-subtotal">
+                                            <th>Tax - 10% </th>
+                                            <td><span class="amount">{{ tax | currency: 'CAD'  }}</span></td>
+                                        </tr>
+                                        <tr class="cart-subtotal">
+                                            <th>Shipping</th>
+                                            <td><span class="amount">-</span></td>
+                                        </tr>
+                                        <tr class="order-total">
+                                            <th>Total</th>
+                                            <td>
+                                                <strong><span class="amount">{{ grandTotal | currency: 'CAD'  }}</span></strong>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="wc-proceed-to-checkout">
+                                    <a (click)=submitPo()>Submit PO</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cart Totals End -->
+                    </div>
+                    <!-- Row End -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <hr>
+                            <span style="font-size: 14px; padding: 15px 0px; display: inline-block;"><b>Note: </b> This e stimate is not a contract or a bill. It is our bwst guess at the total prices to complete the work state above, based up on our initial inspection. If prices change or additional parts and labor are required, we wil inform you prior to proceeding with the work.
+                          </span>
+                            <p style="font-size: 12px; font-weight: bold; text-align: center;">To schedule a time for us to complete the work, or if you have any questions, please contact <br> Green-Town, 289-217-0128,michelle.greentown@gmail.com</p>
+                        </div>
+                    </div>
+                </form>
+                <!-- Form End -->
+            </div>
+        </div>
+        <!-- Row End -->
+    </div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                Copyright @ 2020. All Rights Reserved
+            </div>
+            <div class="col-md-4 offset-md-4 text-right"><span style="color: #5d5c5c;"> Proudly Powered By</span> <img src="../../assets/images/Logosmall.png" class="img-fluid"> </div>
+        </div>
+    </div>
+</div>

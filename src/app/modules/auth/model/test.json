@@ -1,0 +1,56 @@
+{
+    "id": "bb899613-ec3e-463e-ab66-f3dcb8ea1f3e",
+    "type": "browser",
+    "expires_at": "2021-01-11T04:27:04.773557Z",
+    "issued_at": "2021-01-11T04:17:04.773557Z",
+    "request_url": "http://auth.vnnergy.com/self-service/registration/browser",
+    "active": "password",
+    "messages": null,
+    "methods": {
+        "password": {
+            "method": "password",
+            "config": {
+                "action": "https://auth.vnnergy.com/self-service/registration/methods/password?flow=bb899613-ec3e-463e-ab66-f3dcb8ea1f3e",
+                "method": "POST",
+                "fields": [
+                    {
+                        "name": "csrf_token",
+                        "type": "hidden",
+                        "required": true,
+                        "value": "yTxlNVdZsq1C7cl42MBvmpNWaRMmkSy73wwIMXIWVkfyQGRdsTMkglLje/6XAQRUNXA5gvkiUJK8c1CUSv3l3g=="
+                    },
+                    {
+                        "name": "password",
+                        "type": "password",
+                        "required": true,
+                        "messages": [
+                            {
+                                "id": 4000005,
+                                "text": "The password can not be used because the password has been found in at least 24230577 data breaches and must no longer be used..",
+                                "type": "error",
+                                "context": {
+                                    "reason": "the password has been found in at least 24230577 data breaches and must no longer be used."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "name": "traits.email",
+                        "type": "email",
+                        "value": "a@b.com"
+                    },
+                    {
+                        "name": "traits.name.first",
+                        "type": "text",
+                        "value": "a@b.com"
+                    },
+                    {
+                        "name": "traits.name.last",
+                        "type": "text",
+                        "value": "S"
+                    }
+                ]
+            }
+        }
+    }
+}

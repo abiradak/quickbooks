@@ -1,0 +1,203 @@
+[
+    {
+        "id": "4b14a78e-e39d-4c52-a45e-a86fc299e420",
+        "name": "variant2",
+        "type": "product",
+        "description": null,
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "24.99",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": "d0c55c17-9038-435e-ac24-390e2b721200",
+        "identifiers": [
+            {
+                "id": "4be75d2b-38b6-492c-a893-b303199d1d77",
+                "type": "SKU",
+                "identifier": "variant2SKU"
+            }
+        ],
+        "characteristics": [
+            {
+                "id": "eebe99e7-b45a-4127-a500-139308f03073",
+                "name": "color",
+                "value": "magenta-blue"
+            },
+            {
+                "id": "6ab2fb1b-63a7-4844-bd48-4f4a0bb4e02f",
+                "name": "size",
+                "value": "XXXXXL"
+            },
+            {
+                "id": "a5e36126-8e87-409f-b948-4c9418bc6beb",
+                "name": "fit",
+                "value": "tight"
+            }
+        ],
+        "__categories__": [],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "c70f9aec-3960-44d8-86d2-6d5e5e7dcb6c",
+        "name": "variant1",
+        "type": "product",
+        "description": null,
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "24.99",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": "d0c55c17-9038-435e-ac24-390e2b721200",
+        "identifiers": [
+            {
+                "id": "e9bab3b9-9d5a-4ebe-87f5-74d5bd3ceb98",
+                "type": "SKU",
+                "identifier": "variant1SKU"
+            }
+        ],
+        "characteristics": [
+            {
+                "id": "33d9a2c3-4f0f-4271-aa9e-91650205c55a",
+                "name": "color",
+                "value": "magenta-blue"
+            },
+            {
+                "id": "4142c5b7-9294-432f-99c1-e8ea1521f645",
+                "name": "size",
+                "value": "XXXXXL"
+            },
+            {
+                "id": "42cfb37c-0aae-47e0-b0d0-0213d3694768",
+                "name": "fit",
+                "value": "tight"
+            }
+        ],
+        "__categories__": [],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "cd3d0a61-e37e-41aa-8574-329dc8866238",
+        "name": "Mango",
+        "type": "product",
+        "description": "Juicy",
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "10",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": null,
+        "identifiers": [],
+        "characteristics": [
+            {
+                "id": "793cbaea-4e26-4df9-a046-10ee0edb1fca",
+                "name": "calories",
+                "value": ""
+            }
+        ],
+        "__categories__": [
+            {
+                "id": "7f9c6026-693d-4f37-8a4e-14171c6f427d",
+                "name": "Test3",
+                "description": null,
+                "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342"
+            }
+        ],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "d0c55c17-9038-435e-ac24-390e2b721200",
+        "name": "parent",
+        "type": "product_with_variants",
+        "description": null,
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "2.99",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": null,
+        "identifiers": [
+            {
+                "id": "1ada16ee-9304-4c9b-b316-2849b9102463",
+                "type": "SKU",
+                "identifier": "parent1"
+            }
+        ],
+        "characteristics": [],
+        "__categories__": [],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "103f25b9-8513-441c-8429-1ab4e4f6ecfe",
+        "name": "bundle2",
+        "type": "product_bundle",
+        "description": "my great bundled product2",
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "60.99",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": null,
+        "identifiers": [
+            {
+                "id": "69da83e0-4151-4e8b-a01a-0a3c62cdd44b",
+                "type": "SKU",
+                "identifier": "bundleSKU"
+            }
+        ],
+        "characteristics": [],
+        "__categories__": [],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "1ea9899f-d70b-4d7f-8de7-86890405b0a2",
+        "name": "sasasasasasasa",
+        "type": "product",
+        "description": null,
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "1",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": null,
+        "identifiers": [],
+        "characteristics": [],
+        "__categories__": [
+            {
+                "id": "c118139d-4c09-4b3e-bd04-a22d7401321b",
+                "name": "Test",
+                "description": null,
+                "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342"
+            }
+        ],
+        "salesUnit": null,
+        "currency": null
+    },
+    {
+        "id": "d400934b-4623-4783-8b57-c5e1e8d3f979",
+        "name": "bundle11",
+        "type": "product_bundle",
+        "description": "my great bundled product",
+        "orgId": "470a1160-601c-4b2e-b447-a1b84f3e9342",
+        "discriminatingCharacteristics": null,
+        "price": "60.99",
+        "salesUnitId": null,
+        "currencyId": null,
+        "parentId": null,
+        "identifiers": [
+            {
+                "id": "5be044d1-ad06-4f0d-a893-5cb02b1e773f",
+                "type": "SKU",
+                "identifier": "bundleSKU"
+            }
+        ],
+        "characteristics": [],
+        "__categories__": [],
+        "salesUnit": null,
+        "currency": null
+    }
+]

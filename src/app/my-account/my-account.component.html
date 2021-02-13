@@ -1,0 +1,409 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb-list">
+            <li class="breadcrumb-item"><a routerLink="/product-list">Home</a></li>
+            <li class="breadcrumb-item active">My Account</li>
+        </ol>
+    </div>
+</div>
+
+<div class="account-details">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mt-4">
+                <div class=" bgg-white p-2 mb-3">
+                    <div class="profile-dp"><img src="../../assets/images/avatar7.png" class="img-radius"></div>
+                    <div class="profile-dtails pl-4">
+                        <p>Hello,</p>
+                        <h3 *ngIf="account.email">{{account.email}}</h3>
+                    </div>
+                </div>
+                <div class=" bgg-white p-2 mb-3">
+                    <div class="single-slink border-bottom py-3" routerLink="/order-history">
+                        <span class="pr-3">
+                            <svg version="1.1" width="17px" height="17px" fill="#78BC1C" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 511.999 511.999;" xml:space="preserve">
+                                <g>
+                                <g>
+                                    <path d="M476.919,141.304l-0.379-0.655c-0.525-1.089-1.131-2.132-1.807-3.123L403.504,14.38C398.373,5.51,388.821,0,378.574,0
+                                    H133.437c-10.263,0-19.823,5.523-24.952,14.417l-72.39,125.586c-0.652,1.132-1.122,2.316-1.454,3.519
+                                    c-1.019,2.751-1.579,5.724-1.579,8.826v324.365c0,19.456,15.829,35.285,35.285,35.285h375.304
+                                    c19.456,0,35.285-15.829,35.285-35.285V151.159c0-0.435-0.013-0.867-0.036-1.297C479.104,146.975,478.478,143.998,476.919,141.304
+                                    z M271.518,30.011h106.358l56.032,96.873h-162.39V30.011z M134.136,30.011h107.371v96.873H78.296L134.136,30.011z
+                                        M448.925,476.714c0,2.908-2.366,5.274-5.274,5.274H68.347c-2.908,0-5.274-2.366-5.274-5.274V156.895h385.852V476.714z"/>
+                                </g>
+                                </g>
+                                <g>
+                                <g>
+                                    <path d="M324.115,270.026c-5.859-5.859-15.361-5.859-21.221,0l-67.002,67.002l-25.764-25.764c-5.859-5.859-15.361-5.859-21.221,0
+                                    c-5.86,5.859-5.86,15.361,0,21.221l36.376,36.374c2.93,2.93,6.771,4.396,10.61,4.396c3.839,0,7.681-1.466,10.61-4.396
+                                    l77.612-77.612C329.975,285.387,329.975,275.886,324.115,270.026z"/>
+                                </g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                            </svg>
+                        </span> 
+                        MY ORDERS 
+                        <span class="float-right">
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="13px" height="13px" fill="#8c8c8c" viewBox="0 0 792.033 792.033" style="enable-background:new 0 0 792.033 792.033;"  xml:space="preserve">
+                                <g>
+                                <g id="_x38_">
+                                    <g>
+                                    <path d="M617.858,370.896L221.513,9.705c-13.006-12.94-34.099-12.94-47.105,0c-13.006,12.939-13.006,33.934,0,46.874
+                                        l372.447,339.438L174.441,735.454c-13.006,12.94-13.006,33.935,0,46.874s34.099,12.939,47.104,0l396.346-361.191
+                                        c6.932-6.898,9.904-16.043,9.441-25.087C627.763,386.972,624.792,377.828,617.858,370.896z"/>
+                                    </g>
+                                </g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                                <g>
+                                </g>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="single-slink py-3">
+                        <span class="pr-3">
+                        <svg version="1.1" id="Capa_1" width="17px" height="17px" fill="#78BC1C" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                           viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                        <g>
+                          <g>
+                            <path d="M437.02,330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521,243.251,404,198.548,404,148
+                              C404,66.393,337.607,0,256,0S108,66.393,108,148c0,50.548,25.479,95.251,64.262,121.962
+                              c-36.21,12.495-69.398,33.136-97.281,61.018C26.629,379.333,0,443.62,0,512h40c0-119.103,96.897-216,216-216s216,96.897,216,216
+                              h40C512,443.62,485.371,379.333,437.02,330.98z M256,256c-59.551,0-108-48.448-108-108S196.449,40,256,40
+                              c59.551,0,108,48.448,108,108S315.551,256,256,256z"/>
+                          </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        </svg>
+                        </span> ACCOUNT SETTINGS
+                    </div>
+                    <div class="single-slink">
+                        <a (click)="currentTab = 1" [ngClass]="currentTab == 1 ? 'active' : ''" style="cursor: pointer;">Profile Information</a>
+                        <a (click)="currentTab = 2" [ngClass]="currentTab == 2 ? 'active' : ''" style="cursor: pointer;">Manage Addresses</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 my-4">
+                <div class="bgg-white p-3">
+                    <div class="edit-profile" *ngIf="currentTab === 1">
+
+                        <form [formGroup]="personal">
+                            <div class="row py-4">
+                                <div class="col-md-12">
+                                    <span>Organization Information</span> 
+                                    <a style="cursor: pointer;" (click)="personalInfoEditable = true; personal.enable();" *ngIf="!personalInfoEditable">Edit</a>
+                                    <a style="cursor: pointer;" (click)="personalInfoEditable = false; personal.disable();" *ngIf="personalInfoEditable">Cancel</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" placeholder="Organization Name" formControlName="orgName" [ngClass]="{'is-invalid': personal.controls?.orgName?.invalid && personal.controls?.orgName?.touched }">
+                                    <div *ngIf="personal.controls?.orgName?.errors?.required" class="invalid-feedback">
+                                        Organization name is required.
+                                    </div>
+                                    <div *ngIf="personal.controls?.orgName?.errors?.maxlength" class="invalid-feedback">
+                                        Organization name can maximum 100 characters.
+                                    </div>
+                                    <div *ngIf="personal.controls?.orgName?.errors?.minlength" class="invalid-feedback">
+                                        Organization name will atleast 2 characters.
+                                    </div>
+                                    <div *ngIf="personal.controls?.orgName?.errors?.pattern" class="invalid-feedback">
+                                        Organization name will include only characters.
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-4">
+                                    <input type="text" class="form-control" placeholder="Last Name" formControlName="lastName" [ngClass]="{'is-invalid': personal.controls?.lastName?.invalid && personal.controls?.lastName?.touched }">
+                                    <div *ngIf="personal.controls?.lastName?.errors?.required" class="invalid-feedback">
+                                        Last name is required.
+                                    </div>
+                                    <div *ngIf="personal.controls?.lastName?.errors?.maxlength" class="invalid-feedback">
+                                        Last name can maximum 100 characters.
+                                    </div>
+                                    <div *ngIf="personal.controls?.lastName?.errors?.minlength" class="invalid-feedback">
+                                        Last name will atleast 2 characters.
+                                    </div>
+                                    <div *ngIf="personal.controls?.lastName?.errors?.pattern" class="invalid-feedback">
+                                        Last name will include only characters.
+                                    </div>
+                                </div> -->
+                                <div class="col-md-4"> <button type="submit" (click) = "savePersonalInfo()" class="btn btn-primary" *ngIf="personalInfoEditable">SAVE</button> </div>
+                            </div>
+                        </form>
+                            <!-- <div class="row py-4">
+                                <div class="col-md-12">
+                                    <p>Your gender:</p>
+                                    <input type="radio" id="male" name="gender" value="male">
+                                    <label for="male" class="px-2">Male</label>
+                                    <input type="radio" id="female" name="gender" value="female">
+                                    <label for="female" class="pl-2">Female</label>
+                                </div>
+                            </div> -->
+
+                        <!-- <form [formGroup]="emailchange">
+                            <div class="row py-4">
+                                <div class="col-md-12"> 
+                                    <span>Email Address</span> 
+                                    <a style="cursor: pointer;" (click)="emailEditable = true; emailchange.enable();" *ngIf="!emailEditable">Edit</a>
+                                    <a style="cursor: pointer;" (click)="emailEditable = false; emailchange.disable();" *ngIf="emailEditable">Cancel</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" placeholder="Email Address" formControlName="email" [ngClass]="{'is-invalid': emailchange.controls?.email?.invalid && emailchange.controls?.email?.touched }">
+                                    <div *ngIf="emailchange.controls?.email?.errors?.required" class="invalid-feedback">
+                                        Email is required.
+                                    </div>      
+                                    <div *ngIf="emailchange.controls?.email?.errors?.pattern" class="invalid-feedback">
+                                        Email is Not Valid.
+                                    </div>
+                                </div>
+                                <div class="col-md-4"> <button type="submit" (click) = "saveEmail()" class="btn btn-primary" *ngIf="emailEditable">SAVE</button> </div>
+                            </div>
+                        </form> -->
+
+                        <form [formGroup]="mobileNoChange">
+                            <div class="row py-4">
+                                <div class="col-md-12">
+                                    <span>Mobile Number</span> 
+                                    <a style="cursor: pointer;" (click)="mobileEditable = true; mobileNoChange.enable();" *ngIf="!mobileEditable">Edit</a>
+                                    <a style="cursor: pointer;" (click)="mobileEditable = false; mobileNoChange.disable();" *ngIf="mobileEditable">Cancel</a>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" placeholder="Mobile Number" formControlName="phone" [ngClass]="{'is-invalid': mobileNoChange.controls?.phone?.invalid && mobileNoChange.controls?.phone?.touched }">
+                                    <div *ngIf="mobileNoChange.controls?.phone?.errors?.required" class="invalid-feedback">
+                                        Phone number is required.
+                                    </div>
+                                    <div *ngIf="mobileNoChange.controls?.phone?.errors?.maxlength" class="invalid-feedback">
+                                        Phone number can maximum 15 numbers.
+                                    </div>
+                                    <div *ngIf="mobileNoChange.controls?.phone?.errors?.minlength" class="invalid-feedback">
+                                        Phone number will atleast 8 numbers.
+                                    </div>
+                                    <div *ngIf="mobileNoChange.controls?.phone?.errors?.pattern" class="invalid-feedback">
+                                        Invalid phone number(support + and 0-9).
+                                    </div>
+                                </div>
+                                <div class="col-md-4"> <button type="submit" (click) = "saveMobileNo()" class="btn btn-primary cstm-btn" *ngIf="mobileEditable">SAVE</button> </div>
+                            </div>
+                        </form>
+
+                        <!-- Modal -->
+                        <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Change Password </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-body chng-pswrd">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h5><b>Your new password must:</b></h5>
+                                                <ul>
+                                                    <li><span>Be at least 4 characters in length</span></li>
+                                                    <li><span>Not be same as your current password</span></li>
+                                                    <li><span>Not contain common passwords.</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <form [formGroup]="passwordChange">
+                                                    <input type="text" class="form-control mb-3 mt-0 " placeholder="Type Current Password" formControlName="currentpassword" [ngClass]="{'is-invalid': passwordChange.controls?.currentpassword?.invalid && passwordChange.controls?.currentpassword?.touched }">
+                                                    <div *ngIf="passwordChange.controls?.currentpassword?.errors?.required" class="invalid-feedback">
+                                                        Current password is required.
+                                                    </div>
+
+                                                    <input type="text" class="form-control my-3 " placeholder="Type New Password" formControlName="newpassword" [ngClass]="{'is-invalid': passwordChange.controls?.newpassword?.invalid && passwordChange.controls?.newpassword?.touched }">
+                                                    <div *ngIf="passwordChange.controls?.newpassword?.errors?.required" class="invalid-feedback">
+                                                        Password is required.
+                                                    </div>
+                                                    <div *ngIf="passwordChange.controls?.newpassword?.errors?.maxlength" class="invalid-feedback">
+                                                        New password can maximum 15 characters.
+                                                    </div>
+                                                    <div *ngIf="passwordChange.controls?.newpassword?.errors?.minlength" class="invalid-feedback">
+                                                        New password will atleast 4 characters.
+                                                    </div>
+                                                    <div *ngIf="passwordChange.controls?.newpassword?.errors?.pattern" class="invalid-feedback">
+                                                        New password must contain at least one letter and one number.
+                                                    </div>
+
+                                                    <input type="text" class="form-control my-3 " placeholder="Retype New Password" formControlName="confpassword" [ngClass]="{'is-invalid': passwordChange.controls?.confpassword?.invalid && passwordChange.controls?.confpassword?.touched }" (change)="checkConfPassword($event)">
+                                                    <div *ngIf="passwordChange.controls?.confpassword?.errors?.required" class="invalid-feedback">
+                                                        Confirm password is required.
+                                                    </div>
+                                                    <div *ngIf="!passwordMatched" style="width:100%;margin-top: .25rem;font-size: 80%;color: #dc3545;">
+                                                        Confirm password not matched.
+                                                    </div>
+                                                    <button type="submit" (click) = "changePassword()" class="btn btn-primary w-100"> CHANGE PASSWORD </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal   -->
+                    </div>
+
+                    <div *ngIf="currentTab === 2">
+                        <div class="new-address">
+                            <h4>ADD A NEW ADDRESS</h4>
+                            <form [formGroup]="addressForm">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12 my-2">
+                                                <textarea class="form-control" rows="5" placeholder="Address (Area and Street )" formControlName="street" [ngClass]="{'is-invalid': addressForm.controls?.street?.invalid && addressForm.controls?.street?.touched }"></textarea>
+                                                <div *ngIf="addressForm.controls?.street?.errors?.required" class="invalid-feedback">
+                                                    Address is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <!-- <input type="text" class="form-control" placeholder="Country" formControlName="country" [ngClass]="{'is-invalid': addressForm.controls?.country?.invalid && addressForm.controls?.country?.touched }"> -->
+                                                <select class="form-control" formControlName="country" [ngClass]="{'is-invalid': addressForm.controls?.country?.invalid && addressForm.controls?.country?.touched }" (change)="changeCountry($event)">
+                                                    <option value="" hidden="true">No Country Available</option>
+                                                    <option *ngFor="let country of countryList" [value]="country.isoCode">{{ country.name }}</option>
+                                                </select>
+                                                <div *ngIf="addressForm.controls?.country?.errors?.required" class="invalid-feedback">
+                                                    Country is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <!-- <input type="text" class="form-control" placeholder="State" formControlName="state" [ngClass]="{'is-invalid': addressForm.controls?.state?.invalid && addressForm.controls?.state?.touched }"> -->
+                                                <select class="form-control" formControlName="state" [ngClass]="{'is-invalid': addressForm.controls?.state?.invalid && addressForm.controls?.state?.touched }" (change)="changeState($event)">
+                                                    <option value="" hidden="true">No State Available</option>
+                                                    <option *ngFor="let state of stateList" [value]="state.isoCode">{{ state.name }}</option>
+                                                </select>
+                                                <div *ngIf="addressForm.controls?.state?.errors?.required" class="invalid-feedback">
+                                                    State is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <!-- <input type="text" class="form-control" placeholder="City" formControlName="city" [ngClass]="{'is-invalid': addressForm.controls?.city?.invalid && addressForm.controls?.city?.touched }"> -->
+                                                <select class="form-control" formControlName="city" [ngClass]="{'is-invalid': addressForm.controls?.city?.invalid && addressForm.controls?.city?.touched }">
+                                                    <option value="" hidden="true">No City Available</option>
+                                                    <option *ngFor="let city of cityList" [value]="city.name">{{ city.name }}</option>
+                                                </select>
+                                                <div *ngIf="addressForm.controls?.city?.errors?.required" class="invalid-feedback">
+                                                    City is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 my-2">
+                                                <input type="text" class="form-control" placeholder="Pincode" formControlName="pincode" [ngClass]="{'is-invalid': addressForm.controls?.pincode?.invalid && addressForm.controls?.pincode?.touched }">
+                                                <div *ngIf="addressForm.controls?.pincode?.errors?.required" class="invalid-feedback">
+                                                    Pincode is required.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button class="btn btn-primary cstm-btn" type="submit" (click) = "saveAddress()">Save</button> 
+                                                <a class="ml-4">Cancel</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                Copyright @ 2020. All Rights Reserved
+            </div>
+            <div class="col-md-4 offset-md-4 text-right"><span style="color: #5d5c5c;"> Proudly Powered By</span> <img src="../../assets/images/Logosmall.png" class="img-fluid"> </div>
+        </div>
+    </div>
+</div>

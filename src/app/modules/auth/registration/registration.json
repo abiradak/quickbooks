@@ -1,0 +1,79 @@
+{
+    "id": "35425087-58b2-4211-8b1a-2ad827c0f4c7",
+    "type": "browser",
+    "expires_at": "2020-12-26T02:50:50.676963Z",
+    "issued_at": "2020-12-26T02:40:50.676963Z",
+    "request_url": "http://127.0.0.1:4433/self-service/registration/browser",
+    "active": "password",
+    "messages": null,
+    "methods": {
+        "oidc": {
+            "method": "oidc",
+            "config": {
+                "action": "http://127.0.0.1:4433/self-service/methods/oidc/auth/35425087-58b2-4211-8b1a-2ad827c0f4c7",
+                "method": "POST",
+                "fields": [
+                    {
+                        "name": "csrf_token",
+                        "type": "hidden",
+                        "required": true,
+                        "value": "lIXjPMdwsUeTSjASz+a4WN65YWjGlqbh9j3MLzgaEC6/pimq4jnGF7guW31xHcuCUt4R6DDIgATptQrq5qLhkQ=="
+                    },
+                    {
+                        "name": "provider",
+                        "type": "submit",
+                        "value": "gitlab"
+                    },
+                    {
+                        "name": "provider",
+                        "type": "submit",
+                        "value": "github"
+                    }
+                ]
+            }
+        },
+        "password": {
+            "method": "password",
+            "config": {
+                "action": "http://127.0.0.1:4433/self-service/registration/methods/password?flow=35425087-58b2-4211-8b1a-2ad827c0f4c7",
+                "method": "POST",
+                "fields": [
+                    {
+                        "name": "csrf_token",
+                        "type": "hidden",
+                        "required": true,
+                        "value": "ZbA6i0/zKG37KQMST1QVKlwCp9qRrlpjzimpK2rkHfdOk/AdarpfPdBNaH3xr2bw0GXXWmfwfIbRoW/utFzsSA=="
+                    },
+                    {
+                        "name": "password",
+                        "type": "password",
+                        "required": true
+                    },
+                    {
+                        "name": "traits.email",
+                        "type": "email",
+                        "value": "ajay@vnnergy.com"
+                    },
+                    {
+                        "name": "traits.name.first",
+                        "type": "text",
+                        "value": "Ajay"
+                    },
+                    {
+                        "name": "traits.name.last",
+                        "type": "text",
+                        "value": "Sharma"
+                    }
+                ],
+                "messages": [
+                    {
+                        "id": 4000007,
+                        "text": "An account with the same identifier (email, phone, username, ...) exists already.",
+                        "type": "error",
+                        "context": {}
+                    }
+                ]
+            }
+        }
+    }
+}

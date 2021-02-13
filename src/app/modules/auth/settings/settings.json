@@ -1,0 +1,71 @@
+{
+  "id": "b1cdcd1d-a6b1-4087-b615-9f69f540f3fd",
+  "type": "browser",
+  "expires_at": "2020-12-28T09:47:14.910437Z",
+  "issued_at": "2020-12-28T08:47:14.910437Z",
+  "request_url": "http://127.0.0.1:4433/self-service/settings/browser",
+  "messages": null,
+  "methods": {
+    "oidc": {
+      "method": "oidc",
+      "config": {
+        "action": "http://127.0.0.1:4433/self-service/methods/oidc/settings/connections?flow=b1cdcd1d-a6b1-4087-b615-9f69f540f3fd",
+        "method": "POST",
+        "fields": [
+          {
+            "name": "csrf_token",
+            "type": "hidden",
+            "required": true,
+            "value": "E4lnHh9JmbwUCcD2oUQIiKhV7lPY0X23RXgl17ISxQOUYmez2G8834+n30Ff1ctwt0jk6AiDRnr6cZy7gQUQqA=="
+          },
+          { "name": "link", "type": "submit", "value": "gitlab" }
+        ]
+      }
+    },
+    "password": {
+      "method": "password",
+      "config": {
+        "action": "http://127.0.0.1:4433/self-service/settings/methods/password?flow=b1cdcd1d-a6b1-4087-b615-9f69f540f3fd",
+        "method": "POST",
+        "fields": [
+          { "name": "password", "type": "password", "required": true },
+          {
+            "name": "csrf_token",
+            "type": "hidden",
+            "required": true,
+            "value": "E4lnHh9JmbwUCcD2oUQIiKhV7lPY0X23RXgl17ISxQOUYmez2G8834+n30Ff1ctwt0jk6AiDRnr6cZy7gQUQqA=="
+          }
+        ]
+      }
+    },
+    "profile": {
+      "method": "profile",
+      "config": {
+        "action": "http://127.0.0.1:4433/self-service/settings/methods/profile?flow=b1cdcd1d-a6b1-4087-b615-9f69f540f3fd",
+        "method": "POST",
+        "fields": [
+          {
+            "name": "csrf_token",
+            "type": "hidden",
+            "required": true,
+            "value": "E4lnHh9JmbwUCcD2oUQIiKhV7lPY0X23RXgl17ISxQOUYmez2G8834+n30Ff1ctwt0jk6AiDRnr6cZy7gQUQqA=="
+          },
+          {
+            "name": "traits.email",
+            "type": "email",
+            "value": "sharma.ajayr@gmail.com"
+          },
+          { "name": "traits.name.first", "type": "text" },
+          { "name": "traits.name.last", "type": "text" }
+        ]
+      }
+    }
+  },
+  "identity": {
+    "id": "21f4dfdd-7166-4543-9294-cc7a7fd310df",
+    "schema_id": "default",
+    "schema_url": "",
+    "traits": { "email": "sharma.ajayr@gmail.com" }
+  },
+  "state": "show_form"
+}

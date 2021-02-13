@@ -1,0 +1,315 @@
+<div class="product-details">
+    <div class="container">
+        <div class="row">
+            <!-- Filters -->
+            <div class="col-lg-3 col-md-4">
+                <div class="prdct-filter mt-2">
+                    <h5 class="p-2 border-bottom">Filters</h5>
+                    <!-- CATEGORIES -->
+                    <div class="single-filter-select px-2 border-bottom" *ngIf="!selectedCategoryId">
+                        <div class="filter-ttl d-flex justify-content-between pb-2">
+                            CATEGORIES
+                            <span>
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"   xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                width="12px" height="12px" fill="#8c8c8c" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                                    <g>
+                                    <g id="_x39__30_">
+                                        <g>
+                                        <path d="M604.501,440.509L325.398,134.956c-5.331-5.357-12.423-7.627-19.386-7.27c-6.989-0.357-14.056,1.913-19.387,7.27
+                                            L7.499,440.509c-9.999,10.024-9.999,26.298,0,36.323s26.223,10.024,36.222,0l262.293-287.164L568.28,476.832
+                                            c9.999,10.024,26.222,10.024,36.221,0C614.5,466.809,614.5,450.534,604.501,440.509z"/>
+                                        </g>
+                                    </g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                    <g>
+                                    </g>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="div" *ngFor="let item of categories; let i = index;">
+                            <input class="styled-checkbox" (click)="allfilter(item.id , $event.target.checked , 'category')" id="styled-checkbox-{{ i }}" type="checkbox" value="value1">
+                            <label for="styled-checkbox-{{ i }}">{{ item.name }}</label>
+                        </div>
+                    </div>
+                    <!-- PRICE -->
+                    <div class="form-group px-2 border-bottom mb-0 py-2" *ngIf="maxPrice > minPrice">
+                        <div class="filter-ttl">PRICE</div>
+                        <input type="range" class="form-control-range" [min]="minPrice" [max]="maxPrice" [ngModel]="price" (change)="checkPrice($event.target.value)" uib-tooltip="{{price}}" uib-tooltip-placement="top">
+                        <div class="slider-outpt d-flex justify-content-between align-items-center">
+                            <span>${{ minPrice }}</span>
+                            <span>${{ price }}</span>
+                            <span>${{ maxPrice }}</span>
+                        </div>
+                    </div>
+
+                    <!-- OTHER FILTERS -->
+                    <div *ngIf="char">
+                        <div *ngFor="let item of name; let k = index;" class="single-filter-select px-2 border-bottom">
+                            <div class="filter-ttl d-flex justify-content-between pb-2">
+                                {{ item }}
+                                <span>
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    width="12px" height="12px" fill="#8c8c8c" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve">
+                                        <g>
+                                            <g id="_x39__30_">
+                                            <g>
+                                                <path d="M604.501,440.509L325.398,134.956c-5.331-5.357-12.423-7.627-19.386-7.27c-6.989-0.357-14.056,1.913-19.387,7.27
+                                                L7.499,440.509c-9.999,10.024-9.999,26.298,0,36.323s26.223,10.024,36.222,0l262.293-287.164L568.28,476.832
+                                                c9.999,10.024,26.222,10.024,36.221,0C614.5,466.809,614.5,450.534,604.501,440.509z"/>
+                                            </g>
+                                            </g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="div" *ngFor="let elem of char[item];  let j = index;">
+                                <input class="styled-checkbox" id="styled-checkbox-{{ k }}{{ j }}" (click)="allfilter(elem.name.value , $event.target.checked , elem.name.name)" type="checkbox" value="value1">
+                                <label class="filter-ttl-lebel" for="styled-checkbox-{{ k }}{{ j }}">{{ elem.name.value }}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Products -->
+            <div class="col-lg-9 col-md-8">
+                <!-- no product found -->
+                <div class="row" *ngIf="products.length === 0">
+                    <div class="col-md-12 text-center py-4
+                            ">
+                        No Product Found
+                    </div>
+                </div>
+                <!-- no product found -->
+                <div class="row no-gutters">
+                    <div *ngFor="let item of products| paginate: { itemsPerPage: 10, currentPage: p }; let x = index;" class="col-lg-6 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img [src]="item.image"> </div>
+                            <div class="prdct-name">{{ item.name }}</div>
+                            <div class="prdct-des">{{ item.description }}</div>
+                            <div *ngIf="item.characteristics && item.characteristics.length > 0" class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div *ngFor="let item1 of item.characteristics">
+                                    <div class="p-clr" [style.background]="item1.value" *ngIf="item1.name === 'color' && item1.value.length > 0">{{ item1.value }}</div>
+                                    <div class="p-size" *ngIf="item1.name !== 'color' && item1.name.length > 0 && item1.value.length > 0">{{ item1.name }} <span class="g-clr">{{ item1.value }}</span></div>
+                                </div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">${{ item.price }}</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        <p (click)="removeItem(item.id); 'pid = item.id' ">-</p>
+                                        <span *ngIf="item.id === pid && isclicked === true">{{ itemCount }}</span>
+                                        <span *ngIf="isclicked === false">1</span>
+                                        <p (click)="addItem(item.id); 'pid = item.id'">+</p>
+                                    </div>
+                                    <!-- <div class="add-prdct">
+                                        <p (click) = "removeItem(item.id); 'pid = item.id' ">-</p>
+                                         <span *ngIf="item.id === pid && isclicked === true">{{ itemCount }}</span>
+                                         <span *ngIf="isclicked === false">1</span>
+                                        <p (click) = "addItem(item.id); 'pid = item.id'">+</p>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="addToPo(item)"> Add to order</button></div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img src="../../assets/images/product-list-2.png"> </div>
+                            <div class="prdct-name">100BK</div>
+                            <div class="prdct-des">ZINNIA WARM UP JACKET Z445</div>
+                            <div class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div class="p-clr">Red</div>
+                                <div class="p-size">Size <span class="g-clr">XL</span></div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">$10</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        - <span>2</span> +
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="goToPO()"> Add to PO</button></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img src="../../assets/images/product-list-1.png"> </div>
+                            <div class="prdct-name">100BK</div>
+                            <div class="prdct-des">ZINNIA WARM UP JACKET Z445</div>
+                            <div class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div class="p-clr">Red</div>
+                                <div class="p-size">Size <span class="g-clr">XL</span></div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">$10</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        - <span>2</span> +
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="goToPO()"> Add to PO</button></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img src="../../assets/images/product-list-2.png"> </div>
+                            <div class="prdct-name">100BK</div>
+                            <div class="prdct-des">ZINNIA WARM UP JACKET Z445</div>
+                            <div class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div class="p-clr">Red</div>
+                                <div class="p-size">Size <span class="g-clr">XL</span></div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">$10</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        - <span>2</span> +
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="goToPO()"> Add to PO</button></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img src="../../assets/images/product-list-1.png"> </div>
+                            <div class="prdct-name">100BK</div>
+                            <div class="prdct-des">ZINNIA WARM UP JACKET Z445</div>
+                            <div class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div class="p-clr">Red</div>
+                                <div class="p-size">Size <span class="g-clr">XL</span></div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">$10</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        - <span>2</span> +
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="goToPO()"> Add to PO</button></div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
+                        <div class="single-product px-3 pb-2 m-2">
+                            <div class="prdt-img"><img src="../../assets/images/product-list-2.png"> </div>
+                            <div class="prdct-name">100BK</div>
+                            <div class="prdct-des">ZINNIA WARM UP JACKET Z445</div>
+                            <div class="prdct-measorment d-flex justify-content-between align-items-center py-1">
+                                <div class="p-clr">Red</div>
+                                <div class="p-size">Size <span class="g-clr">XL</span></div>
+                            </div>
+                            <div class="p-quentity">QUANTITY ON HAND - <span class="g-clr">50</span></div>
+                            <div class="p-price d-flex justify-content-between align-items-center py-1">
+                                <div class="per-price">$10</div>
+                                <div class="per-qunty">
+                                    <div class="add-prdct">
+                                        - <span>2</span> +
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="add-po text-center pt-2"> <button class="po-btn" (click)="goToPO()"> Add to PO</button></div>
+                        </div>
+
+                    </div> -->
+
+                    <!-- Pagination -->
+                    <div class="col-md-12">
+                        <div class="list-pagination float-right">
+                            <nav aria-label="...">
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                <!-- <ul class="pagination">
+                                    <li class="page-item disabled" (click) = "prev()">
+                                        <a class="page-link" tabindex="-1">Previous</a>
+                                    </li>
+                                    <li class="page-item" *ngFor="let item of pages" [ngClass]="{'active': activatedpage === item}" (click) = "selected(item)">
+                                        <a class="page-link">{{ item }}</a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" (click) = "next()">Next</a>
+                                    </li>
+                                </ul> -->
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
